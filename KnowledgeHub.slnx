@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="KnowledgeHub.Api/KnowledgeHub.Api.csproj" Id="8c37db4a-1ee1-4d0f-9ec4-3a62378d97b0" />
+  <Project Path="KnowledgeHub.Application/KnowledgeHub.Application.csproj" Id="d510191a-9b71-4083-b6ee-ae6144b39d6e" />
+  <Project Path="KnowledgeHub.Domain/KnowledgeHub.Domain.csproj" Id="3a237869-3fdd-4a2a-b64e-99f64277e7b1" />
+  <Project Path="KnowledgeHub.Infra/KnowledgeHub.Infra.csproj" Id="647ca831-93a1-45e9-a1a8-d5863485d82c" />
+</Solution>
