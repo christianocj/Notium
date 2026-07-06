@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using KnowledgeHub.Application.DTOs.Categories;
+using System;
 
 namespace KnowledgeHub.Application.Abstrations.Services
 {

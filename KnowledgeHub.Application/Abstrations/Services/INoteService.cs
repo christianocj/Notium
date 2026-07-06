@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using KnowledgeHub.Application.DTOs;
+using KnowledgeHub.Application.DTOs.Notes;
+using System;
 
 namespace KnowledgeHub.Application.Abstrations.Services
 {

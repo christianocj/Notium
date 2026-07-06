@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KnowledgeHub.Application.DTOs.Users;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using KnowledgeHub.Application.DTOs.Notes;
+using KnowledgeHub.Application.DTOs.Tags;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace KnowledgeHub.Application.Abstrations.Services
 {
-    // Application/Interfaces/Services/ITagService.cs
     public interface ITagService
     {
         Task<TagDto> CreateAsync(Guid userId, CreateTagRequest request, CancellationToken ct = default);
