@@ -51,7 +51,7 @@ public class AppDbContext : DbContext
             entity.Property(n => n.Content).IsRequired();
 
             // Índices para melhorar performance de consultas
-            entity.HasIndex(n => n.Title); 
+            entity.HasIndex(n => n.Title);
             entity.HasIndex(n => n.IsArchived);
             entity.HasIndex(n => n.IsDeleted);
             entity.HasIndex(n => n.IsFavorite);
@@ -66,10 +66,15 @@ public class AppDbContext : DbContext
                   .HasForeignKey(n => n.CategoryId)
                   .OnDelete(DeleteBehavior.Restrict); // não deixa apagar categoria com notas
 
-            // N:N implícito — EF Core cria tabela de junção "NoteTag" automaticamente. 
+            // N:N implícito — configurado explicitamente para evitar múltiplos caminhos de cascade no SQL Server
             entity.HasMany(n => n.Tags)
                   .WithMany(t => t.Notes)
-                  .UsingEntity(j => j.ToTable("NoteTags"));
+                  .UsingEntity<Dictionary<string, object>>(
+                      "NoteTags",
+                      j => j.HasOne<Tag>().WithMany().HasForeignKey("TagsId").OnDelete(DeleteBehavior.NoAction),
+                      j => j.HasOne<Note>().WithMany().HasForeignKey("NotesId").OnDelete(DeleteBehavior.Cascade),
+                      j => j.ToTable("NoteTags")
+                  );
 
             // Query filter global: nunca retorna notas com IsDeleted = true por padrão
             entity.HasQueryFilter(n => !n.IsDeleted);

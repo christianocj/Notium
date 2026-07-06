@@ -122,8 +122,7 @@ namespace KnowledgeHub.Infra.Migrations
                         name: "FK_NoteTags_Tags_TagsId",
                         column: x => x.TagsId,
                         principalTable: "Tags",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

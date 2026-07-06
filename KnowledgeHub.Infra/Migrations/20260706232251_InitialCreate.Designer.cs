@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KnowledgeHub.Infra.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260706222158_InitialCreate")]
+    [Migration("20260706232251_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -170,7 +170,7 @@ namespace KnowledgeHub.Infra.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("NoteTag", b =>
+            modelBuilder.Entity("NoteTags", b =>
                 {
                     b.Property<Guid>("NotesId")
                         .HasColumnType("uniqueidentifier");
@@ -226,7 +226,7 @@ namespace KnowledgeHub.Infra.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("NoteTag", b =>
+            modelBuilder.Entity("NoteTags", b =>
                 {
                     b.HasOne("KnowledgeHub.Domain.Entities.Note", null)
                         .WithMany()
@@ -237,7 +237,7 @@ namespace KnowledgeHub.Infra.Migrations
                     b.HasOne("KnowledgeHub.Domain.Entities.Tag", null)
                         .WithMany()
                         .HasForeignKey("TagsId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
