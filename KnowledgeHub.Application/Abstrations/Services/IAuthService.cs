@@ -1,8 +1,9 @@
-﻿using System;
+﻿using KnowledgeHub.Application.DTOs.Auth;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KnowledgeHub.Domain.Abstrations.Services
+namespace KnowledgeHub.Application.Abstrations.Services
 {
     public interface IAuthService
     {
