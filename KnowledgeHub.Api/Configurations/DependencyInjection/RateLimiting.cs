@@ -43,7 +43,6 @@ namespace KnowledgeHub.Api.Configurations.DependencyInjection
             });
 
             return services;
-            return services;
         }
     }
 }

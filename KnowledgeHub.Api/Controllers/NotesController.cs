@@ -21,7 +21,7 @@ namespace KnowledgeHub.Api.Controllers
 
         private Guid CurrentUserId =>
             Guid.Parse(User.FindFirstValue(JwtRegisteredClaimNames.Sub)!);
-
+        
         [HttpPost]
         public async Task<ActionResult<NoteDto>> Create(CreateNoteRequest request, CancellationToken ct)
         {
