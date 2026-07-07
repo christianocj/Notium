@@ -1,8 +1,8 @@
-﻿using System;
+﻿using KnowledgeHub.Application.Abstrations.Security;
 
 namespace KnowledgeHub.Infra.Security
 {
-    public class BCryptPasswordHasherIPasswordHasher
+    public class BCryptPasswordHasher : IPasswordHasher
     {
         public string HashPassword(string password)
         {

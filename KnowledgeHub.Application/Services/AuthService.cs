@@ -17,10 +17,11 @@ namespace KnowledgeHub.Application.Services
         private readonly IConfiguration _configuration;
         private readonly IPasswordHasher _passwordHasher;
 
-        public AuthService(IUserRepository userRepository, IConfiguration configuration)
+        public AuthService(IUserRepository userRepository, IConfiguration configuration, IPasswordHasher passwordHasher)
         {
             _userRepository = userRepository;
             _configuration = configuration;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task<AuthResult> RegisterAsync(RegisterRequest request, CancellationToken ct = default)

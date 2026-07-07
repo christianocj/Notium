@@ -9,6 +9,7 @@ builder.Services.AddEntityFramework(builder.Configuration);
 builder.Services.AddMyRateLimiting();
 builder.Services.Addrepositories();
 builder.Services.AddServices();
+builder.Services.AddPasswordHasher();
 
 builder.Services.AddSwaggerGen();
 
